@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person List</title>
+</head>
+
+<body>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/add_person">Add Person</a>
+    </nav>
+
+    <h1>Person List</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                < th>Email</>
+                <th>Job</th>
+                <th colspan="2">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% persons.forEach(person=> { %>
+                <tr>
+                    <td>
+                        <%= person.id %>
+                    </td>
+                    <td>
+                        <%= person.name %>
+                    </td>
+                    <td>
+                        <%= person.email %>
+                    </td>
+                    <td>
+                        <%= person.job %>
+                    </td>
+                    <td>
+                        <div>
+                            <button>Edit</button>
+                            <button>Delete</button>
+                        </div>
+                    </td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

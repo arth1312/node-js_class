@@ -35,8 +35,8 @@ server.get('/add_person', (req, res) => {
 });
 
 server.post('/add_person', (req, res) => {
-    const newPerson = req.body;
-    persons.push(newPerson);
+    // const newPerson = req.body;
+    persons.push(req.body);
     res.redirect('/');
 });
 

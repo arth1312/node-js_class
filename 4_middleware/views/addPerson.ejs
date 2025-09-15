@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Person</title>
+</head>
+
+<body>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/add_person">Add Person</a>
+    </nav>
+
+    <h1>Add Person Information</h1>
+
+    <form action="/add_person" method="post">
+        <table>
+            <tr>
+                <td><label for="id">Id:</label></td>
+                <td><input type="number" id="id" name="id" placeholder="Enter ID" required></td>
+            </tr>
+            <tr>
+                <td><label for="name">Name:</label></td>
+                <td><input type="text" id="name" name="name" placeholder="Enter Name" required></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input type="email" id="email" name="email" placeholder="Enter Email" required></td>
+            </tr>
+            <tr>
+                <td><label for="job">Job:</label></td>
+                <td><input type="text" id="job" name="job" placeholder="Enter Job" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <button type="submit">Add Person</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Person</title>
+</head>
+
+<body>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/add_person">Add Person</a>
+    </nav>
+
+    <h1>Edit Person Information</h1>
+
+    <form action="/edit_person/<%= person.id%>" method="post">
+        <table>
+            <tr>
+                <td><label for="id">Id:</label></td>
+                <td><input type="number" name="id" placeholder="Enter ID" value="<%= person.id%>" disabled></td>
+            </tr>
+            <tr>
+                <td><label for="name">Name:</label></td>
+                <td><input type="text" name="name" placeholder="Enter Name" value="<%= person.name%>" required></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input type="email" name="email" placeholder="Enter Email" value="<%= person.email%>" required></td>
+            </tr>
+            <tr>
+                <td><label for="job">Job:</label></td>
+                <td><input type="text" name="job" placeholder="Enter Job" value="<%= person.job%>" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <button type="submit">Edit Person</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+
+</body>
+
+</html>

@@ -40,6 +40,30 @@ server.post('/add_person', (req, res) => {
     res.redirect('/');
 });
 
+server.get('/delete-person/:id', (req, res) => {
+    let id = req.params.id;
+    persons = persons.filter(person => person.id != id)
+
+    res.redirect('/')
+})
+
+
+server.get('/edit-person/:id', (req, res) => {
+    let id = req.params.id;
+    let person = persons.find(person => person.id == id)
+    console.log(person);
+
+    res.render('editPerson', { person, id });
+});
+
+server.post('/edit_person/:id', (req, res) => {
+    let id = req.params.id;
+    let record = persons.findIndex(person => person.id == id);
+    persons[record] = { ...persons[record], ...req.body };
+
+    res.redirect("/");
+});
+
 let port = 8001;
 
 server.listen(port, () => {

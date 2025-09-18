@@ -9,18 +9,14 @@ server.use(express.urlencoded());
 
 server.set("view engine", "ejs");
 
-server.get("/", (req, res) => {
-    return res.render("index");
+server.get("/", async (req, res) => {
+    let users = await UserModel.find();
+    return res.render("index", { users });
 });
 
 server.post("/add-user", async (req, res) => {
-    try {
-        let user = await UserModel.create(req.body);
-        return res.redirect("/");
-    } catch (err) {
-        console.error("Error adding user:", err);
-        return res.status(500).send("Internal Server Error");
-    }
+    let user = await UserModel.create(req.body);
+    return res.redirect("/");
 });
 
 server.listen(port, () => {

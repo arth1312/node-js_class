@@ -66,23 +66,23 @@
             <table class="form-table">
                 <tr>
                     <td><label for="firstname">Firstname:</label></td>
-                    <td><input type="text" id="firstname" name="firstname" class="input-field" required/></td>
+                    <td><input type="text" id="firstname" name="firstname" class="input-field" required /></td>
                 </tr>
                 <tr>
                     <td><label for="lastname">Lastname:</label></td>
-                    <td><input type="text" id="lastname" name="lastname" class="input-field" required/></td>
+                    <td><input type="text" id="lastname" name="lastname" class="input-field" required /></td>
                 </tr>
                 <tr>
                     <td><label for="mobileNo">Mobile No:</label></td>
-                    <td><input type="number" id="mobileNo" name="mobileNo" class="input-field" required/></td>
+                    <td><input type="number" id="mobileNo" name="mobileNo" class="input-field" required /></td>
                 </tr>
                 <tr>
                     <td><label for="email">Email:</label></td>
-                    <td><input type="email" id="email" name="email" class="input-field" required/></td>
+                    <td><input type="email" id="email" name="email" class="input-field" required /></td>
                 </tr>
                 <tr>
                     <td><label for="password">Password:</label></td>
-                    <td><input type="password" id="password" name="password" class="input-field" required/></td>
+                    <td><input type="password" id="password" name="password" class="input-field" required /></td>
                 </tr>
                 <tr>
                     <td>Gender:</td>
@@ -101,36 +101,48 @@
     </div>
     <hr>
     <div align="center">
-    <table border="1">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>MobileNo</th>
-                <th>Email</th>
-                <th>Gender</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% users.forEach((user, i) => { %>
+        <table border="1">
+            <thead>
                 <tr>
-                    <td><%= i+1 %></td>
-                    <td><%= user.firstname %></td>
-                    <td><%= user.lastname %></td>
-                    <td><%= user.mobileNo %></td>
-                    <td><%= user.email %></td>
-                    <td><%= user.gender %></td>
-                    <td>
-                        <a href="/edit-user/<%= user.id %>"><button>Edit</button></a>
-                        <a href="/delete-user/<%= user.id %>"><button>Delete</button></a>
-                    </td>
+                    <th>#</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>MobileNo</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th colspan="2">Action</th>
                 </tr>
-            <% }) %>
-        </tbody>
-    </table>
-</div>
+            </thead>
+            <tbody>
+                <% users.forEach((user, i)=> { %>
+                    <tr>
+                        <td>
+                            <%= i+1 %>
+                        </td>
+                        <td>
+                            <%= user.firstname %>
+                        </td>
+                        <td>
+                            <%= user.lastname %>
+                        </td>
+                        <td>
+                            <%= user.mobileNo %>
+                        </td>
+                        <td>
+                            <%= user.email %>
+                        </td>
+                        <td>
+                            <%= user.gender %>
+                        </td>
+                        <td>
+                            <a href="/edit-user/<%= user.id %>"><button>Edit</button></a>
+                            <a href="/delete-user/<%= user.id %>"><button>Delete</button></a>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+    </div>
 
 </body>
 

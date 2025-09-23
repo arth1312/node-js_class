@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f4f4f9;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .form-title {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-table {
+            width: 100%;
+            text-align: left;
+        }
+
+        .input-field {
+            width: 95%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin: 4px 0;
+        }
+
+        .radio-btn {
+            margin: 0 5px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(50deg, orangered, navy);
+            width: 100%;
+            color: white;
+            padding: 15px 35px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition-duration: .5s;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(40deg, #0800ff, #00d0ff);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2 class="form-title">User Details</h2>
+        <form action="/add-user" method="post" enctype="multipart/form-data" class="user-form">
+            <table class="form-table">
+                <tr>
+                    <td><label for="firstname">Firstname:</label></td>
+                    <td><input type="text" id="firstname" name="firstname" class="input-field" required /></td>
+                </tr>
+                <tr>
+                    <td><label for="lastname">Lastname:</label></td>
+                    <td><input type="text" id="lastname" name="lastname" class="input-field" required /></td>
+                </tr>
+                <tr>
+                    <td><label for="mobileNo">Mobile No:</label></td>
+                    <td><input type="number" id="mobileNo" name="mobileNo" class="input-field" required /></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email:</label></td>
+                    <td><input type="email" id="email" name="email" class="input-field" required /></td>
+                </tr>
+                <tr>
+                    <td><label for="password">Password:</label></td>
+                    <td><input type="password" id="password" name="password" class="input-field" required /></td>
+                </tr>
+                <tr>
+                    <td>Gender:</td>
+                    <td>
+                        <input type="radio" name="gender" value="male" class="radio-btn" /> Male
+                        <input type="radio" name="gender" value="female" class="radio-btn" /> Female
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="password">USer Image:</label></td>
+                    <td><input type="file" id="file" name="profile" class="input-field" required /></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" value="Submit" class="submit-btn" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <hr>
+    <div align="center">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Image</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>MobileNo</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th colspan="2">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% users.forEach((user, i)=> { %>
+                    <tr>
+                        <td>
+                            <%= i+1 %>
+                        </td>
+                        <td>
+                            <img src="<%= user.profile %>" alt="" width="50px">
+                        </td>
+                        <td>
+                            <%= user.firstname %>
+                        </td>
+                        <td>
+                            <%= user.lastname %>
+                        </td>
+                        <td>
+                            <%= user.mobileNo %>
+                        </td>
+                        <td>
+                            <%= user.email %>
+                        </td>
+                        <td>
+                            <%= user.gender %>
+                        </td>
+                        <td>
+                            <a href="/edit-user/<%= user.id %>"><button>Edit</button></a>
+                            <a href="/delete-user/<%= user.id %>"><button>Delete</button></a>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>

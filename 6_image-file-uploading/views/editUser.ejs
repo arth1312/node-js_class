@@ -65,29 +65,43 @@
             <table class="form-table">
                 <tr>
                     <td><label for="firstname">Firstname:</label></td>
-                    <td><input type="text" id="firstname" name="firstname" class="input-field" value="<%= user.firstname %>" /></td>
+                    <td><input type="text" id="firstname" name="firstname" class="input-field"
+                            value="<%= user.firstname %>" /></td>
                 </tr>
                 <tr>
                     <td><label for="lastname">Lastname:</label></td>
-                    <td><input type="text" id="lastname" name="lastname" class="input-field" value="<%= user.lastname %>" /></td>
+                    <td><input type="text" id="lastname" name="lastname" class="input-field"
+                            value="<%= user.lastname %>" /></td>
                 </tr>
                 <tr>
                     <td><label for="mobileNo">Mobile No:</label></td>
-                    <td><input type="number" id="mobileNo" name="mobileNo" class="input-field" value="<%= user.mobileNo %>" /></td>
+                    <td><input type="number" id="mobileNo" name="mobileNo" class="input-field"
+                            value="<%= user.mobileNo %>" /></td>
                 </tr>
                 <tr>
                     <td><label for="email">Email:</label></td>
-                    <td><input type="email" id="email" name="email" class="input-field" value="<%= user.email %>" /></td>
+                    <td><input type="email" id="email" name="email" class="input-field" value="<%= user.email %>" />
+                    </td>
                 </tr>
                 <tr>
                     <td><label for="password">Password:</label></td>
-                    <td><input type="password" id="password" name="password" class="input-field" value="<%= user.password %>" /></td>
+                    <td><input type="password" id="password" name="password" class="input-field"
+                            value="<%= user.password %>" /></td>
                 </tr>
                 <tr>
                     <td>Gender:</td>
                     <td>
-                        <input type="radio" name="gender" value="male" class="radio-btn" <% if(user.gender == "male") { %> checked <% } %> /> Male
-                        <input type="radio" name="gender" value="female" class="radio-btn" <% if(user.gender == "female") { %> checked <% } %> /> Female
+                        <input type="radio" name="gender" value="male" class="radio-btn" <% if(user.gender=="male" ) {
+                            %> checked <% } %> /> Male
+                            <input type="radio" name="gender" value="female" class="radio-btn" <%
+                                if(user.gender=="female" ) { %> checked <% } %> /> Female
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="password">USer Image:</label></td>
+                    <td><input type="file" id="file" name="profile" class="input-field" required /></td>
+                    <td>
+                        <img src="<%= user.profile %>" alt="" width="50px">
                     </td>
                 </tr>
                 <tr>

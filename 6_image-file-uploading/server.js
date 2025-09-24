@@ -7,7 +7,6 @@ const server = express();
 const dbConnnection = require("./config/dbConnection");
 const UserModel = require('./model/user.model');
 const uploads = require('./middleware/uploadImage');
-const { profile } = require('console');
 
 server.set("view engine", "ejs");
 server.use(express.urlencoded());

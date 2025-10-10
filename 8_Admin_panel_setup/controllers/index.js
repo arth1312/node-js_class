@@ -80,7 +80,7 @@ try {
  
      if (user) {
       if (oldPassword === newPassword) {
-         console.log("oldPassword andnewPassword cannot be the same");
+         console.log("oldPassword and newPassword cannot be the same");
          return res.redirect("/dashboard");
        }
    

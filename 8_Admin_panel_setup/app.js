@@ -6,7 +6,7 @@ const router = require("./routes");
 const cookieParser =  require("cookie-parser")
 
 const app = express();
-const port = 8088;
+const port = 8008;
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
